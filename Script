@@ -78,7 +78,7 @@ textLabel.Parent = blackFrame
 
 -- Tocar o primeiro áudio por 5 segundos a partir de 0:32
 local sound1 = Instance.new("Sound")
-sound1.SoundId = "rbxassetid://106688332998850"
+sound1.SoundId = "rbxassetid://77405864184828"
 sound1.Volume = 10
 sound1.TimePosition = 32
 sound1.Looped = false
