@@ -50,69 +50,6 @@ end
     print("Clicked")
 end)
 
-Section:NewButton("Auto store", "nada", function()
-local player = game.Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-
--- GUI
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "KickScreen"
-screenGui.IgnoreGuiInset = true
-screenGui.ResetOnSpawn = false
-screenGui.Parent = playerGui
-
-local blackFrame = Instance.new("Frame")
-blackFrame.Size = UDim2.new(1, 0, 1, 0)
-blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-blackFrame.BackgroundTransparency = 0
-blackFrame.Parent = screenGui
-
-local textLabel = Instance.new("TextLabel")
-textLabel.Size = UDim2.new(1, 0, 1, 0)
-textLabel.Text = "Anti-cheat Detected"
-textLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
-textLabel.BackgroundTransparency = 1
-textLabel.Font = Enum.Font.GothamBlack
-textLabel.TextScaled = true
-textLabel.Parent = blackFrame
-
--- Tocar o primeiro áudio por 5 segundos a partir de 0:32
-local sound1 = Instance.new("Sound")
-sound1.SoundId = "rbxassetid://77405864184828"
-sound1.Volume = 10
-sound1.TimePosition = 32
-sound1.Looped = false
-sound1.Parent = game:GetService("SoundService")
-sound1:Play()
-
--- Esperar 5 segundos e parar o som
-task.delay(5, function()
-	sound1:Stop()
-
-	-- Kicka o jogador
-	player:Kick("You have been permanently suspended")
-
-	-- Tocar o segundo áudio
-	local sound2 = Instance.new("Sound")
-	sound2.SoundId = "rbxassetid://106688332998"
-	sound2.Volume = 10
-	sound2.Looped = false
-	sound2.Parent = game:GetService("SoundService")
-	sound2:Play()
-
-	-- Quando o segundo áudio terminar, tocar o terceiro
-	sound2.Ended:Connect(function()
-		local sound3 = Instance.new("Sound")
-		sound3.SoundId = "rbxassetid://77405864184828"
-		sound3.Volume = 10
-		sound3.Looped = false
-		sound3.Parent = game:GetService("SoundService")
-		sound3:Play()
-	end)
-end)
-    print("Clicked")
-end)
-
 Section:NewButton("ServerHop", "nada", function()
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
