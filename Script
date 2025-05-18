@@ -50,33 +50,49 @@ end
     print("Clicked")
 end)
 
-Section:NewButton("ServerHop", "nada", function()
+Section:NewButton("Serverhop", ".", function()
+-- Script (coloque em ServerScriptService)
 local HttpService = game:GetService("HttpService")
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 
-local player = Players.LocalPlayer
-local PlaceId = game.PlaceId
+local placeId = game.PlaceId
+local player = Players:GetPlayers()[1] -- ou escolha o jogador desejado
 
-local function hopServer()
-    local success, servers = pcall(function()
-        local url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Asc&limit=100", PlaceId)
-        return HttpService:JSONDecode(game:HttpGet(url))
-    end)
+local function serverHop()
+	local cursor = ""
+	local foundServer = false
 
-    if success and servers and servers.data then
-        for _, server in ipairs(servers.data) do
-            if server.playing < server.maxPlayers and server.id ~= game.JobId then
-                TeleportService:TeleportToPlaceInstance(PlaceId, server.id, player)
-                break
-            end
-        end
-    else
-        warn("Falha ao buscar servidores.")
-    end
+	while not foundServer do
+		local url = "https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?sortOrder=Asc&limit=100"
+		if cursor ~= "" then
+			url = url .. "&cursor=" .. cursor
+		end
+
+		local success, response = pcall(function()
+			return HttpService:JSONDecode(game:HttpGet(url))
+		end)
+
+		if success and response and response.data then
+			for _, server in pairs(response.data) do
+				if server.playing < server.maxPlayers and server.id ~= game.JobId then
+					-- Teleportar para o novo servidor
+					TeleportService:TeleportToPlaceInstance(placeId, server.id, player)
+					foundServer = true
+					break
+				end
+			end
+
+			cursor = response.nextPageCursor or ""
+			if cursor == nil then break end
+		else
+			warn("Erro ao buscar servidores")
+			break
+		end
+	end
 end
 
-hopServer()
+serverHop()
     print("Clicked")
 end)
 
@@ -183,10 +199,6 @@ end)
 
 local Section = Tab:NewSection("Farm Boss Mobile Support")
 
-Section:NewButton("Please! Wait 4 Minutes to use the script", "ButtonInfo", function()
-    print("Clicked")
-end)
-
 Section:NewButton("Auto Uncanny Boss", ".", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sunexn/standsawakening/main/uncanny.lua",true))()
     print("Clicked")
@@ -261,6 +273,170 @@ Section:NewButton("Teleport to Rachael Quests", "lol", function()
     print("Clicked")
 end)
 
+local Tab =
+Window:NewTab("Musics")
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Sounds Support (click me)", ".", function()
+-- LocalScript
+
+local ignoredIds = {
+	["rbxassetid://9043578323"] = true,
+	["rbxassetid://110733765539890"] = true,
+	["rbxassetid://124249063943651"] = true,
+}
+
+-- Função que para sons de música, exceto os ignorados
+local function stopMusicSounds()
+	for _, sound in ipairs(game:GetDescendants()) do
+		if sound:IsA("Sound") and sound.IsPlaying then
+			local nameLower = string.lower(sound.Name)
+			local isMusic = sound.Looped or sound.Volume >= 1 or nameLower:find("music") or nameLower:find("bgm")
+
+			local isIgnored = ignoredIds[sound.SoundId] == true
+
+			if isMusic and not isIgnored then
+				sound:Stop()
+			end
+		end
+	end
+end
+
+-- Loop contínuo
+while true do
+	stopMusicSounds()
+	wait(1) -- Verifica a cada 1 segundo
+end
+    print("Clicked")
+end)
+
+Section:NewButton("Five Nights At Freddy", ".", function()
+-- LocalScript (coloque em StarterPlayerScripts ou StarterGui)
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Criar a GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- Tela preta
+local blackFrame = Instance.new("Frame")
+blackFrame.Size = UDim2.new(1, 0, 1, 0)
+blackFrame.Position = UDim2.new(0, 0, 0, 0)
+blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+blackFrame.BackgroundTransparency = 0
+blackFrame.Parent = screenGui
+
+-- Imagem
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(0.98, 0, 0.98, 0)
+imageLabel.Position = UDim2.new(0.01, 0, 0.01, 0)
+imageLabel.BackgroundTransparency = 1
+imageLabel.Image = "rbxassetid://15882055952" -- Substitua se quiser outra imagem
+imageLabel.ScaleType = Enum.ScaleType.Fit
+imageLabel.ImageTransparency = 1
+imageLabel.Parent = blackFrame
+
+-- Som
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://110733765539890"
+sound.Volume = 10
+sound.Looped = false
+sound.Parent = workspace
+sound:Play()
+
+-- Fade-in
+for i = 1, 10 do
+	imageLabel.ImageTransparency = 1 - (i * 0.1)
+	wait(0.05)
+end
+
+-- Espera 3 segundos visível
+wait(3)
+
+-- Fade-out
+for i = 1, 10 do
+	imageLabel.ImageTransparency = i * 0.1
+	wait(0.05)
+end
+
+-- Limpa GUI
+screenGui:Destroy()
+    print("Clicked")
+end)
+
+Section:NewButton("Die in a fire", ".", function()
+-- Script (pode ser colocado em ServerScriptService ou StarterPlayer > StarterPlayerScripts)
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://124249063943651"
+sound.Volume = 5
+sound.Looped = false -- coloque true se quiser que a música repita
+sound.Parent = workspace
+
+sound:Play()
+    print("Clicked")
+end)
+
+Section:NewButton("Happy birthday", ".", function()
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- Tela preta
+local blackFrame = Instance.new("Frame")
+blackFrame.Size = UDim2.new(1, 0, 1, 0)
+blackFrame.Position = UDim2.new(0, 0, 0, 0)
+blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+blackFrame.BackgroundTransparency = 0
+blackFrame.Parent = screenGui
+
+-- Imagem (Decal central)
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(0.98, 0, 0.98, 0)
+imageLabel.Position = UDim2.new(0.01, 0, 0.01, 0)
+imageLabel.BackgroundTransparency = 1
+imageLabel.Image = "rbxassetid://119445894220732" -- imagem
+imageLabel.ScaleType = Enum.ScaleType.Fit
+imageLabel.ImageTransparency = 1 -- começa invisível
+imageLabel.Parent = blackFrame
+
+-- Som
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://9043578323" -- nova música
+sound.Volume = 5
+sound.Looped = false
+sound.Parent = workspace
+sound:Play()
+
+-- Fade-in
+for i = 1, 10 do
+	imageLabel.ImageTransparency = 1 - (i * 0.1)
+	wait(0.05)
+end
+
+-- Espera 30 segundos com imagem visível
+wait(30)
+
+-- Fade-out da imagem
+for i = 1, 10 do
+	imageLabel.ImageTransparency = i * 0.1
+	wait(0.05)
+end
+
+-- Parar o som e remover tudo
+sound:Stop()
+screenGui:Destroy()
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("Misc")
 local Section = Tab:NewSection("Use in game")
 
@@ -330,17 +506,22 @@ ScreenGui.Name = "ScreenGui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 
-local Toggle = Instance.new("TextButton")
+local Toggle = Instance.new("ImageButton")
 Toggle.Name = "Toggle"
 Toggle.Parent = ScreenGui
 Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
-Toggle.Size = UDim2.new(0, 38, 0, 38)
-Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "Open"
-Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
-Toggle.TextSize = 25.000
+Toggle.Position = UDim2.new(0, 10, 0, 10) -- canto superior esquerdo com uma margem
+Toggle.Size = UDim2.new(0, 40, 0, 40) -- quadrado com tamanho controlado
+Toggle.Image = "rbxassetid://12466484955"
 Toggle.Draggable = true
-Toggle.MouseButton1Click:connect(function()
+Toggle.Active = true -- necessário para funcionar o Draggable
+Toggle.Selectable = true
+
+-- Bordas arredondadas
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 8)
+corner.Parent = Toggle
+
+Toggle.MouseButton1Click:Connect(function()
     Library:ToggleUI()
-end) 
+end)
