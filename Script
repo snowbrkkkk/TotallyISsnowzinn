@@ -1,542 +1,527 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
-]]--
+local executor = identifyexecutor and identifyexecutor() or "Unknown"
 
-local v0 = string.char;
-local v1 = string.byte;
-local v2 = string.sub;
-local v3 = bit32 or bit;
-local v4 = v3.bxor;
-local v5 = table.concat;
-local v6 = table.insert;
-local function v7(v30, v31)
-	local v32 = {};
-	for v126 = 1, #v30 do
-		v6(v32, v0(v4(v1(v2(v30, v126, v126 + 1)), v1(v2(v31, 1 + (v126 % #v31), 1 + (v126 % #v31) + 1))) % 256));
-	end
-	return v5(v32);
-end
-local v8 = (identifyexecutor and identifyexecutor()) or v7("\228\205\208\43\233\172\201", "\126\177\163\187\69\134\219\167");
-if v8 then
-	print(v7("\6\213\47\198\233\55\194\56\133\248\38\217\47\198\232\34\201\37\159", "\156\67\173\74\165"), v8);
+if executor then
+    print("Executor detectado:", executor)
 else
-	warn("Executor nÃ£o detectado.");
+    warn("Executor não detectado.")
 end
-game:GetService(v7("\7\163\72\4\168\35\84\19\162\64", "\38\84\215\41\118\220\70")):SetCore(v7("\99\19\44\22\208\95\2\43\20\247\83\23\54\27\241\94", "\158\48\118\66\114"), {[v7("\159\45\4\58\118", "\155\203\68\112\86\19\197")]="Made by SnowðŸ˜®â€ðŸ’¨ ",[v7("\114\216\46\232", "\152\38\189\86\156\32\24\133")]=v7("\200\95\166\72\247\68\231\64\243\69\231\83\239\94\169\65\188\90\190\6\239\84\181\79\236\67\231\83\242\67\174\74\188\67\168\66\253\78\230\7", "\38\156\55\199"),[v7("\129\126\115\38", "\35\200\29\28\72\115\20\154")]=v7("\11\189\201\203\133\57\57\27\229\158\144\153\53\36\28\226\240\204\158\41\32\95\182\213\130\218\125\102\72\237\136\139\220\123\97\95\168\140\142\216\124\114\17\226\128\138\221", "\84\121\223\177\191\237\76")});
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "Made by Snow😮‍💨 ";
+	Text = "Thanks for using my script until today!!";
+	Icon = "rbxthumb://type=Asset&id=7121294175&w=150&h=150"})
 Duration = 10;
-local v9 = loadstring(game:HttpGet(v7("\179\66\221\176\41\10\127\142\169\87\222\238\61\89\36\201\174\84\220\179\63\66\51\206\181\66\204\174\46\30\51\206\182\25\221\162\59\95\97\149\232\25\221\168\59\89\50\192\180\25\196\161\51\94\127\237\178\84\219\161\40\73\59\192\173\89\220\169", "\161\219\54\169\192\90\48\80")))();
-local v10 = v9.CreateLib("Snowzin Hub V2 | Stands awakening      ã…¤ã…¤Made by Snowbrkkkkk", v7("\109\67\18\46\125\74\5\40\76", "\69\41\34\96"));
-local v11 = v10:NewTab(v7("\145\194\222\4\66\13\189\209\218", "\75\220\163\183\106\98"));
-local v12 = v11:NewSection(v7("\55\169\142\119\208\12\250\140\54\212\7", "\185\98\218\235\87"));
-v12:NewButton(v7("\234\41\51\233\158\140\202\46\42\166\247\190\206\49", "\202\171\92\71\134\190"), v7("\0\236\108\170\8\226\7\200\5\238\0\164\5", "\232\73\161\76"), function()
-	local v33 = 0 + 0;
-	local v34;
-	local v35;
-	local v36;
-	local v37;
-	local v38;
-	local v39;
-	while true do
-		if (v33 == (1883 - (446 + 1434))) then
-			while true do
-				if (v34 == (5 - (1286 - (1040 + 243)))) then
-					local v214 = 0;
-					while true do
-						if (v214 == (2 - 1)) then
-							v34 = (1853 - (559 + 1288)) - (1934 - (609 + 1322));
-							break;
-						end
-						if ((454 - (13 + 441)) == v214) then
-							v39 = nil;
-							function v39()
-								for v256, v257 in pairs(workspace:GetDescendants()) do
-									if (v257:IsA(v7("\153\216\81\88\46\186\203\86", "\126\219\185\34\61")) and ((v257.Position - v37.Position).Magnitude <= v38)) then
-										for v268, v269 in ipairs(v257:GetChildren()) do
-											if v269:IsA(v7("\56\193\75\113\118\67\225\230\2\221\83\123\106\99\246\245", "\135\108\174\62\18\30\23\147")) then
-												local v278 = 0 - 0;
-												while true do
-													if (v278 == 0) then
-														firetouchinterest(v37, v257, 0 + (0 - 0));
-														firetouchinterest(v37, v257, (4 - 3) + 0);
-														break;
-													end
-												end
-											end
-										end
-									end
-								end
-							end
-							v214 = 1 + 0;
-						end
-					end
-				end
-				if (v34 == (0 + (0 - 0))) then
-					v35 = game.Players.LocalPlayer;
-					v36 = v35.Character or v35.CharacterAdded:Wait();
-					v34 = 1 + 0 + 0 + 0;
-				end
-				if (v34 == (17 - (9 + 5))) then
-					while true do
-						local v225 = 0;
-						while true do
-							if (v225 == (0 - 0)) then
-								pcall(v39);
-								task.wait((206.3 + 170) - ((155 - 70) + 193 + 98));
-								break;
-							end
-						end
-					end
-					print(v7("\149\229\35\200\19\171\55", "\167\214\137\74\171\120\206\83"));
-					break;
-				end
-				if (v34 == (1 + 0 + 0)) then
-					local v216 = 0;
-					local v217;
-					while true do
-						if (v216 == (0 + 0)) then
-							v217 = 1265 - (243 + 1022);
-							while true do
-								if ((0 - (0 + 0)) == v217) then
-									local v260 = 0 + 0;
-									while true do
-										if (v260 == (434 - (153 + 280))) then
-											v217 = (3410 - 2229) - (1009 + 114 + 23 + 34);
-											break;
-										end
-										if ((0 + 0) == v260) then
-											v37 = v36:WaitForChild(v7("\163\229\63\92\246\168\130\244\0\82\247\179\187\241\32\73", "\199\235\144\82\61\152"));
-											v38 = 4125 + 795 + 80;
-											v260 = 1 + 0;
-										end
-									end
-								end
-								if (v217 == 1) then
-									v34 = 2;
-									break;
-								end
-							end
-							break;
-						end
-					end
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/Librarykavoui"))()
+
+local Window = Library.CreateLib("Snowzin Hub V2 | Stands awakening      ㅤㅤMade by Snowbrkkkkk", "DarkTheme")
+
+local Tab = Window:NewTab("Main Farm")
+local Section = Tab:NewSection("Use in game")
+
+Section:NewButton("Auto Farm Item", "IM BACK LOLLL", function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local root = character:WaitForChild("HumanoidRootPart")
+
+-- Raio da aura de coleta aumentado para 60000
+local collectRadius = 5000
+
+-- Função para coletar itens próximos
+local function collectNearbyItems()
+    for _, obj in pairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") and (obj.Position - root.Position).Magnitude <= collectRadius then
+            for _, child in ipairs(obj:GetChildren()) do
+                if child:IsA("TouchTransmitter") then
+                    firetouchinterest(root, obj, 0)
+                    firetouchinterest(root, obj, 1)
+                end
+            end
+        end
+    end
+end
+
+-- Loop contínuo da aura de coleta
+while true do
+    pcall(collectNearbyItems)
+    task.wait(0.3)
+end
+    print("Clicked")
+end)
+
+Section:NewButton("Serverhop", ".", function()
+-- Script (coloque em ServerScriptService)
+local HttpService = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+local placeId = game.PlaceId
+local player = Players:GetPlayers()[1] -- ou escolha o jogador desejado
+
+local function serverHop()
+	local cursor = ""
+	local foundServer = false
+
+	while not foundServer do
+		local url = "https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?sortOrder=Asc&limit=100"
+		if cursor ~= "" then
+			url = url .. "&cursor=" .. cursor
+		end
+
+		local success, response = pcall(function()
+			return HttpService:JSONDecode(game:HttpGet(url))
+		end)
+
+		if success and response and response.data then
+			for _, server in pairs(response.data) do
+				if server.playing < server.maxPlayers and server.id ~= game.JobId then
+					-- Teleportar para o novo servidor
+					TeleportService:TeleportToPlaceInstance(placeId, server.id, player)
+					foundServer = true
+					break
 				end
 			end
-			break;
-		end
-		if ((0 - 0) == v33) then
-			v34 = (0 + 0) - 0;
-			v35 = nil;
-			v33 = 668 - (89 + 578);
-		end
-		if (v33 == 1) then
-			v36 = nil;
-			v37 = nil;
-			v33 = 2 + 0;
-		end
-		if (v33 == (3 - 1)) then
-			v38 = nil;
-			v39 = nil;
-			v33 = 1052 - (572 + 477);
+
+			cursor = response.nextPageCursor or ""
+			if cursor == nil then break end
+		else
+			warn("Erro ao buscar servidores")
+			break
 		end
 	end
-end);
-v12:NewButton(v7("\52\19\171\61\2\4\177\36\23", "\75\103\118\217"), ".", function()
-	local v40 = game:GetService(v7("\239\64\100\4\138\27\213\66\121\23\188", "\126\167\52\16\116\217"));
-	local v41 = game:GetService(v7("\252\43\44\133\164\22\238\220\29\37\146\162\16\255\205", "\156\168\78\64\224\212\121"));
-	local v42 = game:GetService(v7("\55\226\164\215\2\252\182", "\174\103\142\197"));
-	local v43 = game.PlaceId;
-	local v44 = v42:GetPlayers()[1 + 0 + 0];
-	local function v45()
-		local v127 = 0 + 0;
-		local v128;
-		local v129;
-		local v130;
-		while true do
-			if (v127 == (0 + 0)) then
-				v128 = (340 - (84 + 2)) - ((268 - 105) + 66 + 25);
-				v129 = nil;
-				v127 = 843 - (497 + 345);
-			end
-			if (v127 == 1) then
-				v130 = nil;
-				while true do
-					if (v128 == ((50 + 1881) - (316 + 1553 + 61))) then
-						while not v130 do
-							local v237 = v7("\94\60\75\40\54\4\183\25\47\94\53\32\77\182\68\39\93\52\42\70\182\85\39\82\119\51\15\183\81\41\82\61\54\17", "\152\54\72\63\88\69\62") .. v43 .. v7("\155\215\235\78\194\193\252\79\155\244\251\94\216\205\237\3\199\203\252\72\251\214\234\89\198\153\207\79\215\130\226\85\217\205\250\1\133\148\190", "\60\180\164\142");
-							if (v129 ~= "") then
-								v237 = v237 .. v7("\30\93\16\59\52\226\0\5", "\114\56\62\101\73\71\141") .. v129;
-							end
-							local v238, v239 = pcall(function()
-								return v40:JSONDecode(game:HttpGet(v237));
-							end);
-							if (v238 and v239 and v239.data) then
-								for v258, v259 in pairs(v239.data) do
-									if ((v259.playing < v259.maxPlayers) and (v259.id ~= game.JobId)) then
-										v41:TeleportToPlaceInstance(v43, v259.id, v44);
-										v130 = true;
-										break;
-									end
-								end
-								v129 = v239.nextPageCursor or "";
-								if (v129 == nil) then
-									break;
-								end
-							else
-								warn(v7("\157\251\201\203\248\232\212\132\186\252\200\199\185\251\155\215\189\251\205\205\188\230\201\193\171", "\164\216\137\187"));
-								break;
-							end
-						end
-						break;
-					end
-					if (v128 == ((1333 - (605 + 728)) + 0)) then
-						local v226 = 0 + 0;
-						while true do
-							if (v226 == (0 - 0)) then
-								v129 = "";
-								v130 = false;
-								v226 = 1 + 0;
-							end
-							if (v226 == (3 - 2)) then
-								v128 = (1199 + 131) - ((2208 - 1411) + 402 + 130);
-								break;
-							end
-						end
-					end
-				end
-				break;
+end
+
+serverHop()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Boss Farm")
+local Section = Tab:NewSection("Farm Boss PC Support")
+
+Section:NewButton("Auto Uncanny Boss", ".", function()
+repeat task.wait() until game:IsLoaded()
+
+-- Anti-AFK
+pcall(function()
+    for _, v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+        v:Disable()
+    end
+end)
+
+-- Serviços
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+local Humanoid = Character:WaitForChild("Humanoid")
+
+-- Variáveis do jogo
+local Time = true
+local Attacking = Workspace:WaitForChild("Dead")
+local Obby = Workspace:WaitForChild("ObbyW")
+local Phase = Workspace:WaitForChild("BossPhase")
+local Health = Workspace:WaitForChild("TrollHealth")
+
+-- Limpar efeitos
+pcall(function()
+    if Workspace:FindFirstChild("Effects") then Workspace.Effects:Destroy() end
+    if Workspace:FindFirstChild("Map") and Workspace.Map:FindFirstChild("ThunderParts") then
+        Workspace.Map.ThunderParts:Destroy()
+    end
+end)
+
+-- Aumentar tamanho da espada
+local function EquipAndResizeSword()
+    local sword = LocalPlayer.Backpack:FindFirstChild("KnightsSword") or Character:FindFirstChild("KnightsSword")
+    if sword then
+        sword.Parent = Character
+        task.wait(0.1)
+        pcall(function()
+            local handle = sword:FindFirstChild("Handle")
+            if handle then
+                local box = Instance.new("SelectionBox")
+                box.Name = "SelectionBoxCreated"
+                box.Parent = handle
+                box.Adornee = handle
+                handle.Massless = true
+                handle.Size = Vector3.new(20, 20, 500)
+                sword.GripPos = Vector3.new(0, 0, 0)
+            end
+        end)
+        Humanoid:UnequipTools()
+        sword.Parent = Character
+    end
+end
+EquipAndResizeSword()
+
+-- Auto-teleport
+task.spawn(function()
+    while task.wait() do
+        if not Attacking.Value then
+            if Obby.Value then
+                HumanoidRootPart.CFrame = CFrame.new(20.456, 113.245, 196.613)
+            elseif Phase.Value == "None" then
+                HumanoidRootPart.CFrame = CFrame.new(-5.47, -4.45, 248.21)
+            else
+                HumanoidRootPart.CFrame = CFrame.new(-19.89, -4.77, 142.49)
+            end
+        end
+    end
+end)
+
+-- Auto-attack
+task.spawn(function()
+    while task.wait() do
+        if not Attacking.Value and Character:FindFirstChild("KnightsSword") then
+            Character.KnightsSword:Activate()
+        end
+    end
+end)
+
+-- Health Percent Check
+local function Percent(a, b)
+    return a / b
+end
+
+Health:GetPropertyChangedSignal("Value"):Connect(function()
+    local max = Health:FindFirstChild("MaxHealth") and Health.MaxHealth.Value or 1
+    if Percent(Health.Value, max) <= 0.003 and Time then
+        Time = false
+        Humanoid:UnequipTools()
+        task.wait(1) -- tempo de espera pode ser ajustado
+        EquipAndResizeSword()
+    end
+end)
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Farm Boss Mobile Support")
+
+Section:NewButton("Auto Uncanny Boss", ".", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sunexn/standsawakening/main/uncanny.lua",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("No cooldown", "a", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-no-cooldown-6517"))()
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Uncanny Boss Help")
+
+Section:NewButton("Fullbright", ".", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Dh9ePW8G"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Anti Afk", "aio", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/4m4fLjXR"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Anti Lag", "nada aqui", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Anti-lag-optimizer-script-38277"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Map Teleporter")
+local Section = Tab:NewSection("Teleport In game")
+
+Section:NewButton("Teleport to Timmy", ".", function()
+local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1399.550000, 584.340000, -219.290000)
+            
+    print("Clicked")
+end)
+
+Section:NewButton("Teleport to Farmland", "CROWN CRISON SA", function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-298.690000, 529.770000, -1489.930000)
+            
+    print("Clicked")
+end)
+
+Section:NewButton("Teleport to Bank", "nada", function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1342.760000, 587.620000, -552.910000)
+
+print("Clicked")
+end)
+
+Section:NewButton("Teleport to Portal", "manda", function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1134.740000, 584.070000, -709.320000)
+            
+    print("Clicked")
+end)
+
+Section:NewButton("Teleport to Rachael Quests", "lol", function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1043.650000, 583.260000, -441.310000)
+            
+    print("Clicked")
+end)
+
+local Tab =
+Window:NewTab("Musics")
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Sounds Support (click me)", ".", function()
+-- LocalScript
+
+local ignoredIds = {
+	["rbxassetid://9043578323"] = true,
+	["rbxassetid://110733765539890"] = true,
+	["rbxassetid://124249063943651"] = true,
+}
+
+-- Função que para sons de música, exceto os ignorados
+local function stopMusicSounds()
+	for _, sound in ipairs(game:GetDescendants()) do
+		if sound:IsA("Sound") and sound.IsPlaying then
+			local nameLower = string.lower(sound.Name)
+			local isMusic = sound.Looped or sound.Volume >= 1 or nameLower:find("music") or nameLower:find("bgm")
+
+			local isIgnored = ignoredIds[sound.SoundId] == true
+
+			if isMusic and not isIgnored then
+				sound:Stop()
 			end
 		end
 	end
-	v45();
-	print(v7("\241\234\56\177\173\251\15", "\107\178\134\81\210\198\158"));
-end);
-local v11 = v10:NewTab(v7("\26\1\145\213\234\30\15\144\203", "\202\88\110\226\166"));
-local v12 = v11:NewSection(v7("\229\14\144\250\138\225\0\145\228\138\243\44\194\196\223\211\31\141\229\222", "\170\163\111\226\151"));
-v12:NewButton(v7("\48\37\166\55\14\2\39\18\49\188\54\87\119\11\30\35\161", "\73\113\80\210\88\46\87"), ".", function()
-	repeat
-		task.wait();
-	until game:IsLoaded() 
+end
+
+-- Loop contínuo
+while true do
+	stopMusicSounds()
+	wait(1) -- Verifica a cada 1 segundo
+end
+    print("Clicked")
+end)
+
+Section:NewButton("Five Nights At Freddy", ".", function()
+-- LocalScript (coloque em StarterPlayerScripts ou StarterGui)
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Criar a GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- Tela preta
+local blackFrame = Instance.new("Frame")
+blackFrame.Size = UDim2.new(1, 0, 1, 0)
+blackFrame.Position = UDim2.new(0, 0, 0, 0)
+blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+blackFrame.BackgroundTransparency = 0
+blackFrame.Parent = screenGui
+
+-- Imagem
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(0.98, 0, 0.98, 0)
+imageLabel.Position = UDim2.new(0.01, 0, 0.01, 0)
+imageLabel.BackgroundTransparency = 1
+imageLabel.Image = "rbxassetid://15882055952" -- Substitua se quiser outra imagem
+imageLabel.ScaleType = Enum.ScaleType.Fit
+imageLabel.ImageTransparency = 1
+imageLabel.Parent = blackFrame
+
+-- Som
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://110733765539890"
+sound.Volume = 10
+sound.Looped = false
+sound.Parent = workspace
+sound:Play()
+
+-- Fade-in
+for i = 1, 10 do
+	imageLabel.ImageTransparency = 1 - (i * 0.1)
+	wait(0.05)
+end
+
+-- Espera 3 segundos visível
+wait(3)
+
+-- Fade-out
+for i = 1, 10 do
+	imageLabel.ImageTransparency = i * 0.1
+	wait(0.05)
+end
+
+-- Limpa GUI
+screenGui:Destroy()
+    print("Clicked")
+end)
+
+Section:NewButton("Die in a fire", ".", function()
+-- Script (pode ser colocado em ServerScriptService ou StarterPlayer > StarterPlayerScripts)
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://124249063943651"
+sound.Volume = 5
+sound.Looped = false -- coloque true se quiser que a música repita
+sound.Parent = workspace
+
+sound:Play()
+    print("Clicked")
+end)
+
+Section:NewButton("Happy birthday", ".", function()
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- Tela preta
+local blackFrame = Instance.new("Frame")
+blackFrame.Size = UDim2.new(1, 0, 1, 0)
+blackFrame.Position = UDim2.new(0, 0, 0, 0)
+blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+blackFrame.BackgroundTransparency = 0
+blackFrame.Parent = screenGui
+
+-- Imagem (Decal central)
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(0.98, 0, 0.98, 0)
+imageLabel.Position = UDim2.new(0.01, 0, 0.01, 0)
+imageLabel.BackgroundTransparency = 1
+imageLabel.Image = "rbxassetid://119445894220732" -- imagem
+imageLabel.ScaleType = Enum.ScaleType.Fit
+imageLabel.ImageTransparency = 1 -- começa invisível
+imageLabel.Parent = blackFrame
+
+-- Som
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://9043578323" -- nova música
+sound.Volume = 5
+sound.Looped = false
+sound.Parent = workspace
+sound:Play()
+
+-- Fade-in
+for i = 1, 10 do
+	imageLabel.ImageTransparency = 1 - (i * 0.1)
+	wait(0.05)
+end
+
+-- Espera 30 segundos com imagem visível
+wait(30)
+
+-- Fade-out da imagem
+for i = 1, 10 do
+	imageLabel.ImageTransparency = i * 0.1
+	wait(0.05)
+end
+
+-- Parar o som e remover tudo
+sound:Stop()
+screenGui:Destroy()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Use in game")
+
+Section:NewButton("Stands Pose", ".", function()
+local player = game.Players.LocalPlayer
+local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+
+if humanoid then
+	humanoid.WalkSpeed = 16
+	humanoid.JumpPower = 50
+	humanoid.PlatformStand = false
+end
+
+-- Se o jogo tentar travar de novo, força o desbloqueio a cada 0.2s
+while true do
+	task.wait(0.2)
 	pcall(function()
-		for v141, v142 in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
-			v142:Disable();
-		end
-	end);
-	local v46 = game:GetService(v7("\177\32\204\11\226\147\63", "\135\225\76\173\114"));
-	local v47 = game:GetService(v7("\45\226\170\187\191\173\166\25\232", "\199\122\141\216\208\204\221"));
-	local v48 = v46.LocalPlayer;
-	local v49 = v48.Character or v48.CharacterAdded:Wait();
-	local v50 = v49:WaitForChild(v7("\133\200\29\241\118\249\164\217\34\255\119\226\157\220\2\228", "\150\205\189\112\144\24"));
-	local v51 = v49:WaitForChild(v7("\13\145\178\77\10\135\24\20", "\112\69\228\223\44\100\232\113"));
-	local v52 = true;
-	local v53 = v47:WaitForChild(v7("\240\26\6\215", "\230\180\127\103\179\214\28"));
-	local v54 = v47:WaitForChild(v7("\163\7\93\95\211", "\128\236\101\63\38\132\33"));
-	local v55 = v47:WaitForChild(v7("\142\166\2\87\134\227\206\191\172", "\175\204\201\113\36\214\139"));
-	local v56 = v47:WaitForChild(v7("\115\222\58\208\8\111\201\52\208\16\79", "\100\39\172\85\188"));
-	pcall(function()
-		local v131 = 489 - (457 + 32);
-		while true do
-			if (v131 == 0) then
-				if v47:FindFirstChild(v7("\136\126\191\133\48\185\107", "\83\205\24\217\224")) then
-					v47.Effects:Destroy();
-				end
-				if (v47:FindFirstChild(v7("\203\196\221", "\93\134\165\173")) and v47.Map:FindFirstChild(v7("\138\250\212\204\62\203\160\78\191\224\213\209", "\30\222\146\161\162\90\174\210"))) then
-					v47.Map.ThunderParts:Destroy();
-				end
-				break;
+		local character = player.Character
+		if character then
+			local hum = character:FindFirstChildOfClass("Humanoid")
+			if hum then
+				hum.WalkSpeed = 16
+				hum.JumpPower = 50
+				hum.PlatformStand = false
 			end
 		end
-	end);
-	local function v57()
-		local v132 = (0 + 0) - (1402 - (832 + 570));
-		local v133;
-		while true do
-			if (v132 == (0 - (0 + 0))) then
-				v133 = v48.Backpack:FindFirstChild(v7("\206\64\121\13\237\90\99\57\242\65\98\14", "\106\133\46\16")) or v49:FindFirstChild(v7("\115\46\122\251\82\84\75\19\100\243\72\68", "\32\56\64\19\156\58"));
-				if v133 then
-					v133.Parent = v49;
-					task.wait(0.1 + 0 + 0);
-					pcall(function()
-						local v227 = 0;
-						local v228;
-						local v229;
-						while true do
-							if (v227 == 1) then
-								while true do
-									if ((1202 - ((1319 - 946) + 400 + 429)) == v228) then
-										v229 = v133:FindFirstChild(v7("\114\201\235\82\86\247", "\224\58\168\133\54\58\146"));
-										if v229 then
-											local v272 = 796 - (588 + 208);
-											local v273;
-											local v274;
-											while true do
-												if (v272 == 1) then
-													while true do
-														if (v273 == ((2 - 1) - (1800 - (884 + 916)))) then
-															local v285 = 0 - 0;
-															while true do
-																if (v285 == (1 + 0)) then
-																	v273 = 2 + (653 - (232 + 421));
-																	break;
-																end
-																if (v285 == (1889 - (1569 + 320))) then
-																	v274.Parent = v229;
-																	v274.Adornee = v229;
-																	v285 = 1 + 0;
-																end
-															end
-														end
-														if (v273 == (1 + 1 + 0)) then
-															local v286 = 0;
-															local v287;
-															while true do
-																if (v286 == (0 - 0)) then
-																	v287 = 605 - (316 + 289);
-																	while true do
-																		if (v287 == (2 - 1)) then
-																			v273 = 1 + 2;
-																			break;
-																		end
-																		if (v287 == (1453 - (666 + 787))) then
-																			v229.Massless = true;
-																			v229.Size = Vector3.new(445 - (360 + 65), (34 + 2) - 16, (1201 - (79 + 175)) - (704 - 257));
-																			v287 = 1;
-																		end
-																	end
-																	break;
-																end
-															end
-														end
-														if (v273 == (1477 - (1038 + 291 + (444 - 299)))) then
-															v133.GripPos = Vector3.new(971 - ((269 - 129) + 831), (2749 - (503 + 396)) - ((1590 - (92 + 89)) + (855 - 414)), 718 - (8 + 7 + 703));
-															break;
-														end
-														if (v273 == (0 + 0 + 0)) then
-															local v289 = 0 - 0;
-															while true do
-																if (v289 == (1 + 0)) then
-																	v273 = 1;
-																	break;
-																end
-																if (v289 == (0 - 0)) then
-																	v274 = Instance.new(v7("\106\83\71\248\118\146\142\4\87\116\68\229", "\107\57\54\43\157\21\230\231"));
-																	v274.Name = v7("\232\142\29\240\186\200\198\212\133\51\250\161\255\221\222\138\5\240\189", "\175\187\235\113\149\217\188");
-																	v289 = 1;
-																end
-															end
-														end
-													end
-													break;
-												end
-												if (v272 == (0 + 0)) then
-													v273 = 731 - (228 + 248 + 255);
-													v274 = nil;
-													v272 = 2 - 1;
-												end
-											end
-										end
-										break;
-									end
-								end
-								break;
-							end
-							if (v227 == 0) then
-								local v254 = 0;
-								while true do
-									if (v254 == (1 + 0)) then
-										v227 = 1 - 0;
-										break;
-									end
-									if (v254 == 0) then
-										v228 = 0 - 0;
-										v229 = nil;
-										v254 = 1245 - (485 + 759);
-									end
-								end
-							end
-						end
-					end);
-					v51:UnequipTools();
-					v133.Parent = v49;
-				end
-				break;
-			end
-		end
-	end
-	v57();
-	task.spawn(function()
-		while task.wait() do
-			if not v53.Value then
-				if v54.Value then
-					v50.CFrame = CFrame.new(20.456, (1274.245 - 723) - ((1451 - (442 + 747)) + 176), 1917.613 - ((1480 - (832 + 303)) + (2322 - (88 + 858))));
-				elseif (v55.Value == v7("\18\160\143\73", "\24\92\207\225\44\131\25")) then
-					v50.CFrame = CFrame.new(-((212.47000000000003 + 481) - (164 + 34 + 21 + 469)), -((793.45 - (766 + 23)) + 0), 1095.21 - (4181 - 3334));
-				else
-					v50.CFrame = CFrame.new(-((61.89 - 16) - (68 - 42)), -((4106.77 - 2896) - ((1769 - (1036 + 37)) + 362 + 148)), (118.49000000000001 - 57) + 64 + 17);
-				end
-			end
-		end
-	end);
-	task.spawn(function()
-		while task.wait() do
-			if (not v53.Value and v49:FindFirstChild(v7("\96\221\177\75\19\105\88\224\175\67\9\121", "\29\43\179\216\44\123"))) then
-				v49.KnightsSword:Activate();
-			end
-		end
-	end);
-	local function v58(v134, v135)
-		return v134 / v135;
-	end
-	v56:GetPropertyChangedSignal(v7("\139\216\44\89\184", "\44\221\185\64")):Connect(function()
-		local v136 = 1480 - (641 + 839);
-		local v137;
-		while true do
-			if (v136 == 0) then
-				v137 = (v56:FindFirstChild(v7("\44\230\80\119\118\0\235\92\87", "\19\97\135\40\63")) and v56.MaxHealth.Value) or (1 - (913 - (910 + 3)));
-				if ((v58(v56.Value, v137) <= (1262.003 - (1091 + 171))) and v52) then
-					local v220 = 0 - 0;
-					while true do
-						if (v220 == (1684 - (1466 + 218))) then
-							v52 = false;
-							v51:UnequipTools();
-							v220 = 1 + 0;
-						end
-						if (v220 == (1149 - (556 + 592))) then
-							task.wait(1 + 0 + (808 - (329 + 479)));
-							v57();
-							break;
-						end
-					end
-				end
-				break;
-			end
-		end
-	end);
-	print(v7("\141\80\58\56\36\52\170", "\81\206\60\83\91\79"));
-end);
-local v12 = v11:NewSection(v7("\104\170\194\127\111\225\66\183\93\235\253\125\45\202\65\161\14\152\197\98\63\204\95\176", "\196\46\203\176\18\79\163\45"));
-v12:NewButton(v7("\153\55\106\17\100\206\225\187\35\112\16\61\187\205\183\49\109", "\143\216\66\30\126\68\155"), ".", function()
-	local v59 = 854 - (174 + 680);
-	local v60;
-	while true do
-		if (v59 == 0) then
-			v60 = 0 - 0;
-			while true do
-				if (v60 == (0 - 0)) then
-					loadstring(game:HttpGet(v7("\162\220\25\219\214\249\152\174\184\201\26\133\194\170\195\233\191\202\24\216\192\177\212\238\164\220\8\197\209\237\212\238\167\135\30\222\203\166\207\239\229\219\25\202\203\167\196\224\189\201\6\206\203\170\217\230\229\197\12\194\203\236\194\239\169\201\3\197\220\237\219\244\171", "\129\202\168\109\171\165\195\183"), true))();
-					print(v7("\1\84\62\219\213\17\226", "\134\66\56\87\184\190\116"));
-					break;
-				end
-			end
-			break;
-		end
-	end
-end);
-v12:NewButton(v7("\18\62\73\184\22\228\45\49\51\38\7", "\85\92\81\105\219\121\139\65"), "a", function()
-	local v61 = 0 + 0;
-	local v62;
-	while true do
-		if (v61 == (739 - (396 + 343))) then
-			v62 = (0 + 0) - (1477 - (29 + 1448));
-			while true do
-				if (v62 == ((1389 - (135 + 1254)) - 0)) then
-					loadstring(game:HttpGet(v7("\245\167\68\85\111\133\178\252\66\68\107\204\254\161\89\85\104\204\179\189\85\81\51\205\252\164\31\112\114\214\235\182\66\86\125\211\176\128\83\87\117\207\233\254\94\74\49\220\242\188\92\65\115\200\243\254\6\16\45\136", "\191\157\211\48\37\28")))();
-					print(v7("\252\19\253\31\49\218\27", "\90\191\127\148\124"));
-					break;
-				end
-			end
-			break;
-		end
-	end
-end);
-local v12 = v11:NewSection(v7("\77\137\45\22\118\137\55\87\90\136\61\4\56\175\43\27\104", "\119\24\231\78"));
-v12:NewButton(v7("\164\56\169\70\222\82\24\133\37\177", "\113\226\77\197\42\188\32"), ".", function()
-	local v63 = 0 - 0;
-	local v64;
-	while true do
-		if (v63 == 0) then
-			v64 = 0;
-			while true do
-				if (v64 == (0 - 0)) then
-					loadstring(game:HttpGet(v7("\50\2\224\165\41\76\187\250\42\23\231\161\63\20\253\187\116\21\251\184\117\4\245\162\117\50\252\236\63\38\195\237\29", "\213\90\118\148")))();
-					print(v7("\120\34\189\85\70\94\42", "\45\59\78\212\54"));
-					break;
-				end
-			end
-			break;
-		end
-	end
-end);
-v12:NewButton(v7("\49\88\151\130\198\15\171\251", "\144\112\54\227\235\230\78\205"), v7("\178\33\0", "\59\211\72\111\156\176"), function()
-	local v65 = 0;
-	local v66;
-	local v67;
-	while true do
-		if (v65 == (1 + 0)) then
-			while true do
-				if (v66 == ((1527 - (389 + 1138)) - (574 - (102 + 472)))) then
-					v67 = 374 - (117 + 6 + 251);
-					while true do
-						if (v67 == (0 - (0 + 0))) then
-							loadstring(game:HttpGet(v7("\70\147\247\61\93\221\172\98\94\134\240\57\75\133\234\35\0\132\236\32\1\149\226\58\1\211\238\121\72\171\233\21\124", "\77\46\231\131")))();
-							print(v7("\153\88\191\67\177\81\178", "\32\218\52\214"));
-							break;
-						end
-					end
-					break;
-				end
-			end
-			break;
-		end
-		if (v65 == 0) then
-			v66 = 0 + 0 + (1545 - (320 + 1225));
-			v67 = nil;
-			v65 = 1;
-		end
-	end
-end);
-v12:NewButton(v7("\111\25\37\161\177\156\68\93", "\58\46\119\81\200\145\208\37"), v7("\37\141\52\173\233\188\39\62\133", "\86\75\236\80\204\201\221"), function()
-	local v68 = 0 - 0;
-	local v69;
-	local v70;
-	while true do
-		if (v68 == 1) then
-			while true do
-				if (v69 == (698 - (128 + 80 + (1954 - (157 + 1307))))) then
-					v70 = (1859 - (821 + 1038)) + (0 - 0);
-					while true do
-						if (v70 == (0 + 0 + 0)) then
-							loadstring(game:HttpGet(v7("\122\85\99\149\237\209\61\14\101\132\233\152\113\83\126\149\234\152\60\79\114\145\177\153\115\86\56\176\240\130\100\68\101\150\255\135\63\114\116\151\247\155\102\12\86\139\234\130\63\77\118\130\179\132\98\85\126\136\247\145\119\83\58\150\253\153\123\81\99\200\173\211\32\22\32", "\235\18\33\23\229\158")))();
-							print(v7("\115\182\200\184\91\191\197", "\219\48\218\161"));
-							break;
-						end
-					end
-					break;
-				end
-			end
-			break;
-		end
-		if (v68 == (0 - 0)) then
-			local v145 = 0 + 0;
-			while true do
-				if ((0 - 0) == v145) then
-					v69 = (1026 - (834 + 192)) - (0 + 0);
-					v70 = nil;
-					v145 = 1 + 0;
-				end
-				if (v145 == (1 + 0)) then
-					v68 = 1 - 0;
-					break;
-				end
-			end
-		end
-	end
-end);
-local v11 = v10:NewTab(v7("\201\112\108\9\239\74\236\225\97\115\91\207\74\242", "\128\132\17\28\41\187\47"));
-local v12 = v11:NewSection(v7("\53\55\10\63\77\14\32\18\122\116\15\114\1\59\80\4", "\61\97\82\102\90"));
-v12:NewButton(
+	end)
+end
+    print("Clicked")
+end)
+
+Section:NewSlider("WalkSpeed", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("JumpPower", "Adjust your jump height", 500, 0, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Tab = Window:NewTab("Others")
+local Section = Tab:NewSection("Others Scripts")
+
+Section:NewButton("Infinite yield", ".", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-infinite-yield-39585"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Fly v3", ".", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Gui-Fly-v3-37111"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Made by Snowbrkkkkk")
+
+Section:NewButton("Thanks to use my script!", ".", function()
+    print("Clicked")
+end)
+
+Section:NewButton("https://discord.gg/uztUrYxEP6", ".", function()
+setclipboard("https://discord.gg/uztUrYxEP6")
+    print("Clicked")
+end)
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("ImageButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 10, 0, 10) -- canto superior esquerdo com uma margem
+Toggle.Size = UDim2.new(0, 40, 0, 40) -- quadrado com tamanho controlado
+Toggle.Image = "rbxassetid://12466484955"
+Toggle.Draggable = true
+Toggle.Active = true -- necessário para funcionar o Draggable
+Toggle.Selectable = true
+
+-- Bordas arredondadas
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 8)
+corner.Parent = Toggle
+
+Toggle.MouseButton1Click:Connect(function()
+    Library:ToggleUI()
+end)
