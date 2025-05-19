@@ -199,7 +199,7 @@ end)
 
 local Section = Tab:NewSection("Farm Boss Mobile Support")
 
-Section:NewButton("Auto Uncanny Boss", ".", function()
+Section:NewButton("Auto Uncanny Boss", "credits to zurx", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sunexn/standsawakening/main/uncanny.lua",true))()
     print("Clicked")
 end)
