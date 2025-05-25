@@ -6,8 +6,6 @@ else
     warn("Executor não detectado.")
 end
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/Librarykavoui"))()
-
 local Window = Library.CreateLib("Snowzin Hub V2 | Selection version      ㅤㅤMade by Snowbrkkkkk", "DarkTheme")
 
 local Tab = Window:NewTab("Hubs")
