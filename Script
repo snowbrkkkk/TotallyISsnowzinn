@@ -1,1 +1,566 @@
-loadstring(game:HttpGet("https://pastebin.com/raw/AZFD9W5v"))()
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
+local Window = OrionLib:MakeWindow({IntroText = "Stands awakening", IntroIcon = "rbxassetid://97922352986793",Name = ("Snowzinn Hub - Stands awakening ".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://5990961512", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "slap battles"})
+
+local Tab = Window:MakeTab({
+	Name = "Main Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Farming"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Auto use Banknote",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/UFV8PsGt"))()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Auto get Itens",
+	Callback = function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local root = character:WaitForChild("HumanoidRootPart")
+
+-- Raio da aura de coleta aumentado para 60000
+local collectRadius = 5000
+
+-- Função para coletar itens próximos
+local function collectNearbyItems()
+    for _, obj in pairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") and (obj.Position - root.Position).Magnitude <= collectRadius then
+            for _, child in ipairs(obj:GetChildren()) do
+                if child:IsA("TouchTransmitter") then
+                    firetouchinterest(root, obj, 0)
+                    firetouchinterest(root, obj, 1)
+                end
+            end
+        end
+    end
+end
+
+-- Loop contínuo da aura de coleta
+while true do
+    pcall(collectNearbyItems)
+    task.wait(0.3)
+end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Anti-Afk",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/4m4fLjXR"))()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Auto get Stands",
+	Callback = function()
+local player = game.Players.LocalPlayer
+
+-- GUI principal
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "SnowStandFarmUI"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+-- Frame central
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 350, 0, 400)
+frame.Position = UDim2.new(0.5, -175, 0.5, -200)
+frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+frame.BorderSizePixel = 0
+frame.Visible = true
+frame.Parent = screenGui
+
+-- Título
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundTransparency = 1
+title.Text = "Snow Stand Farm"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 28
+title.Font = Enum.Font.SourceSansBold
+title.Parent = frame
+
+-- Botão Cube
+local cubeButton = Instance.new("TextButton")
+cubeButton.Size = UDim2.new(1, -20, 0, 40)
+cubeButton.Position = UDim2.new(0, 10, 0, 60)
+cubeButton.Text = "Cube (No Ban Risk)"
+cubeButton.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
+cubeButton.TextColor3 = Color3.new(1, 1, 1)
+cubeButton.Font = Enum.Font.SourceSansBold
+cubeButton.TextSize = 20
+cubeButton.Parent = frame
+cubeButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/RAb6ExHN"))()
+end)
+
+-- Botão "Mostrar Stands"
+local showStandsBtn = Instance.new("TextButton")
+showStandsBtn.Size = UDim2.new(1, -20, 0, 40)
+showStandsBtn.Position = UDim2.new(0, 10, 0, 110)
+showStandsBtn.Text = "Mostrar Stands"
+showStandsBtn.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
+showStandsBtn.TextColor3 = Color3.new(1, 1, 1)
+showStandsBtn.Font = Enum.Font.SourceSansBold
+showStandsBtn.TextSize = 20
+showStandsBtn.Parent = frame
+
+-- ScrollingFrame para Stands
+local scrollFrame = Instance.new("ScrollingFrame")
+scrollFrame.Size = UDim2.new(1, -20, 1, -170)
+scrollFrame.Position = UDim2.new(0, 10, 0, 160)
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+scrollFrame.ScrollBarThickness = 6
+scrollFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+scrollFrame.BorderSizePixel = 0
+scrollFrame.Visible = false
+scrollFrame.Parent = frame
+
+local layout = Instance.new("UIListLayout", scrollFrame)
+layout.Padding = UDim.new(0, 5)
+layout.SortOrder = Enum.SortOrder.LayoutOrder
+
+-- Lista de Stands e scripts
+local stands = {
+    {name = "OMT", url = "https://pastebin.com/raw/G93sch6q"},
+    {name = "TheWorld", url = "https://pastebin.com/raw/MW2g3EM6"},
+    {name = "DoppioKingCrimson", url = "https://pastebin.com/raw/r5sRitc1"},
+    {name = "WhitesnakeAU", url = "https://pastebin.com/raw/bMCgMgZ0"},
+    {name = "TheWorldOVA", url = "https://pastebin.com/raw/C9quXvM8"}
+}
+
+-- Cria botões para cada Stand
+for _, stand in ipairs(stands) do
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, 0, 0, 30)
+    button.Text = stand.name
+    button.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Font = Enum.Font.SourceSansBold
+    button.TextSize = 16
+    button.Parent = scrollFrame
+    button.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(stand.url))()
+    end)
+end
+
+-- Atualiza tamanho do scroll automático
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y)
+layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y)
+end)
+
+-- Alterna visibilidade do scroll de Stands
+local standsListOpen = false
+showStandsBtn.MouseButton1Click:Connect(function()
+    standsListOpen = not standsListOpen
+    scrollFrame.Visible = standsListOpen
+end)
+
+-- Botão preto flutuante para abrir/fechar a GUI
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 100, 0, 35)
+toggleButton.Position = UDim2.new(0, 10, 0.5, -150)
+toggleButton.Text = "Fechar GUI"
+toggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Preto
+toggleButton.TextColor3 = Color3.new(1, 1, 1)
+toggleButton.Font = Enum.Font.SourceSansBold
+toggleButton.TextSize = 16
+toggleButton.Parent = screenGui
+
+-- Alternar visibilidade da GUI principal
+local guiVisible = true
+toggleButton.MouseButton1Click:Connect(function()
+    guiVisible = not guiVisible
+    frame.Visible = guiVisible
+    toggleButton.Text = guiVisible and "Fechar GUI" or "Abrir GUI"
+end)
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "ServerHop",
+	Callback = function()
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+
+TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Uncanny Boss",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Boss"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Auto Boss",
+	Callback = function()
+OrionLib:MakeNotification({
+	Name = "Snow's message",
+	Content = "Don't Jump in orb at the end of the boss",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+repeat task.wait() until game:IsLoaded()
+
+-- Anti-AFK
+pcall(function()
+    for _, v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+        v:Disable()
+    end
+end)
+
+-- Serviços
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+local Humanoid = Character:WaitForChild("Humanoid")
+
+-- Variáveis do jogo
+local Time = true
+local Attacking = Workspace:WaitForChild("Dead")
+local Obby = Workspace:WaitForChild("ObbyW")
+local Phase = Workspace:WaitForChild("BossPhase")
+local Health = Workspace:WaitForChild("TrollHealth")
+
+-- Limpar efeitos
+pcall(function()
+    if Workspace:FindFirstChild("Effects") then Workspace.Effects:Destroy() end
+    if Workspace:FindFirstChild("Map") and Workspace.Map:FindFirstChild("ThunderParts") then
+        Workspace.Map.ThunderParts:Destroy()
+    end
+end)
+
+-- Aumentar tamanho da espada
+local function EquipAndResizeSword()
+    local sword = LocalPlayer.Backpack:FindFirstChild("KnightsSword") or Character:FindFirstChild("KnightsSword")
+    if sword then
+        sword.Parent = Character
+        task.wait(0.1)
+        pcall(function()
+            local handle = sword:FindFirstChild("Handle")
+            if handle then
+                local box = Instance.new("SelectionBox")
+                box.Name = "SelectionBoxCreated"
+                box.Parent = handle
+                box.Adornee = handle
+                handle.Massless = true
+                handle.Size = Vector3.new(20, 20, 500)
+                sword.GripPos = Vector3.new(0, 0, 0)
+            end
+        end)
+        Humanoid:UnequipTools()
+        sword.Parent = Character
+    end
+end
+EquipAndResizeSword()
+
+-- Auto-teleport
+task.spawn(function()
+    while task.wait() do
+        if not Attacking.Value then
+            if Obby.Value then
+                HumanoidRootPart.CFrame = CFrame.new(20.456, 113.245, 196.613)
+            elseif Phase.Value == "None" then
+                HumanoidRootPart.CFrame = CFrame.new(-5.47, -4.45, 248.21)
+            else
+                HumanoidRootPart.CFrame = CFrame.new(-19.89, -4.77, 142.49)
+            end
+        end
+    end
+end)
+
+-- Auto-attack
+task.spawn(function()
+    while task.wait() do
+        if not Attacking.Value and Character:FindFirstChild("KnightsSword") then
+            Character.KnightsSword:Activate()
+        end
+    end
+end)
+
+-- Health Percent Check
+local function Percent(a, b)
+    return a / b
+end
+
+Health:GetPropertyChangedSignal("Value"):Connect(function()
+    local max = Health:FindFirstChild("MaxHealth") and Health.MaxHealth.Value or 1
+    if Percent(Health.Value, max) <= 0.003 and Time then
+        Time = false
+        Humanoid:UnequipTools()
+        task.wait(1) -- tempo de espera pode ser ajustado
+        EquipAndResizeSword()
+    end
+end)
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "No cooldown",
+	Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-no-cooldown-6517"))()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Uncanny Boss Help"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Fullbright",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Dh9ePW8G"))()
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Anti Lag",
+	Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Anti-lag-optimizer-script-38277"))()
+      		print("button pressed")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Map",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Teleportion"
+})
+
+Tab:AddButton({
+	Name = "Teleport to Bank",
+	Callback = function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1341.830000, 587.620000, -554.650000)
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to Rachael Quests",
+	Callback = function()              
+                
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1042.210000, 583.260000, -446.560000)
+            
+            
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to Tim",
+	Callback = function()              
+                
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1398.240000, 584.340000, -219.320000)
+            
+            
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to Farmland",
+	Callback = function()              
+                               
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-285.600000, 533.990000, -1487.940000)
+                        
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to Portal",
+	Callback = function()              
+                               
+                
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(1129.440000, 584.070000, -723.080000)
+            
+                        
+      		print("button pressed")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Scripts"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Infinite yield",
+	Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Infinite-Yield_500"))()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Fly v3",
+	Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Gui-Fly-v3-37111"))()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Made by Snowbrkkkkk"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Thanks for using my script <3",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Discord server",
+	Callback = function()
+setclipboard("https://discord.gg/fjS7EyXBMW")
+      		print("button pressed")
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
