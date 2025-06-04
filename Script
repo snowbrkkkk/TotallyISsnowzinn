@@ -6,15 +6,15 @@ local PCButton = Instance.new("TextButton")
 local MobileButton = Instance.new("TextButton")
 
 ScreenGui.Name = "DeviceSupportGUI"
-ScreenGui.ResetOnSpawn = false
+ScreenGui.ResetOnSpawn = false -- mantém a GUI após respawn
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Frame (tamanho ajustado)
+-- Frame
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame.Size = UDim2.new(0, 260, 0, 180) -- Tamanho mais estreito e proporcional
+Frame.Size = UDim2.new(0.6, 0, 0.4, 0) -- tamanho relativo (bom pra mobile)
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 Frame.BorderSizePixel = 0
 Frame.BackgroundTransparency = 0.1
@@ -24,9 +24,8 @@ Title.Parent = Frame
 Title.Text = "What device do you use?"
 Title.Font = Enum.Font.GothamBold
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 20
-Title.Size = UDim2.new(1, 0, 0, 40)
-Title.Position = UDim2.new(0, 0, 0, 5)
+Title.TextSize = 22
+Title.Size = UDim2.new(1, 0, 0.2, 0)
 Title.BackgroundTransparency = 1
 
 -- Botão PC
@@ -34,9 +33,9 @@ PCButton.Parent = Frame
 PCButton.Text = "PC Support\n🖥️"
 PCButton.Font = Enum.Font.Gotham
 PCButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-PCButton.TextSize = 16
-PCButton.Position = UDim2.new(0.05, 0, 0.35, 0)
-PCButton.Size = UDim2.new(0.4, 0, 0.5, -10)
+PCButton.TextSize = 18
+PCButton.Position = UDim2.new(0.1, 0, 0.35, 0)
+PCButton.Size = UDim2.new(0.35, 0, 0.45, 0)
 PCButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 PCButton.BorderSizePixel = 0
 PCButton.AutoButtonColor = true
@@ -46,9 +45,9 @@ MobileButton.Parent = Frame
 MobileButton.Text = "Mobile Support\n📱"
 MobileButton.Font = Enum.Font.Gotham
 MobileButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-MobileButton.TextSize = 16
+MobileButton.TextSize = 18
 MobileButton.Position = UDim2.new(0.55, 0, 0.35, 0)
-MobileButton.Size = UDim2.new(0.4, 0, 0.5, -10)
+MobileButton.Size = UDim2.new(0.35, 0, 0.45, 0)
 MobileButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 MobileButton.BorderSizePixel = 0
 MobileButton.AutoButtonColor = true
