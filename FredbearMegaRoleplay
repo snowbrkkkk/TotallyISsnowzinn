@@ -229,7 +229,7 @@ end
 close.MouseButton1Click:Connect(closeFade)
 
 -- Ativa automaticamente após 10s (uma vez) e fecha
-task.delay(10, function()
+task.delay(5, function()
 	if activated or closing then return end
 	onAutoContinue()
 	closeFade()
