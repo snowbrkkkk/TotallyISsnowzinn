@@ -1,4 +1,4 @@
-getgenv().Config = {api = "5c657f6b99f9000845de401206b0480e96c5bffa11d3d81bdc26d1a84109c931"} -- DO NOT CHANGE
+ getgenv().Config = {api = "5c657f6b99f9000845de401206b0480e96c5bffa11d3d81bdc26d1a84109c931"} -- DO NOT CHANGE
 
 --analytics track
 loadstring(game:HttpGet("https://rbxhook.cc/lua/track.lua"))()
