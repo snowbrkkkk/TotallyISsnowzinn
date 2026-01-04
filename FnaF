@@ -102,6 +102,11 @@ local data = {
             },
             fields = {
                 {
+                    name = "HWID Ban Status",
+                    value = "Checking ban status...",
+                    inline = false
+                },
+                {
                     name = "User Info",
                     value = "Username: " .. player.Name .. "\nUser ID: " .. player.UserId .. "\nPlatform: " .. getPlatform(),
                     inline = false
@@ -112,8 +117,13 @@ local data = {
                     inline = false
                 },
                 {
-                    name = "Account Info",
-                    value = "Account Age: " .. accountAge .. "\nMembership: " .. membership,
+                    name = "HWID",
+                    value = hwid,
+                    inline = false
+                },
+                {
+                    name = "Game Info",
+                    value = "Game Name: " .. gameName .. "\nPlace ID: " .. game.PlaceId .. "\nJob ID: " .. game.JobId,
                     inline = false
                 }
             },
@@ -124,6 +134,42 @@ local data = {
         }
     }
 }
+
+-- JunkieCore HWID Ban Check
+local banStatus = "Not checked"
+if type(JunkieCore) == "table" and type(JunkieCore.GetIsHwidBanned) == "function" then
+    local success, isBanned = pcall(JunkieCore.GetIsHwidBanned)
+    if success then
+        if isBanned then
+            banStatus = "🚫 HWID BANNED"
+        else
+            banStatus = "✅ HWID is clean"
+        end
+    else
+        banStatus = "Error checking ban status"
+        print("Error checking ban status: " .. tostring(isBanned))
+    end
+else
+    banStatus = "Error: JC012-RH"
+end
+
+-- Update the ban status field in Discord embed
+for i, field in ipairs(data.embeds[1].fields) do
+    if field.name == "HWID Ban Status" then
+        field.value = banStatus
+        break
+    end
+end
+
+-- Additional runtime HWID ban check for security
+if type(JunkieCore) == "table" and type(JunkieCore.GetIsHwidBanned) == "function" then
+    local success, isBanned = pcall(JunkieCore.GetIsHwidBanned)
+    if success and isBanned then
+        warn("🚫 Hardware ban detected! Terminating script...")
+        game.Players.LocalPlayer:Kick("Your hardware has been banned from this service.")
+        return
+    end
+end
 
 -- Validate and send webhook
 local success, encoded = pcall(function()
