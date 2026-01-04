@@ -243,7 +243,7 @@ local activated = false
 local function onAutoContinue()
 	if activated then return end
 	activated = true
-loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/8b8cd5fb0243210c1b195a91793992226c85a16ac896746c55cff8b593b765db/download"))()
+loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/d3a4fa8c72566c15b6eb7fa74a2199ceaefea755b4af4528779c8ff34883fc42/download"))()
 print("Auto continue ativado")
 end
 
